@@ -16,20 +16,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home',[
+    return view('home', [
         "title" => "Home"
     ]);
 });
-
-Route::get('/about', function () {
+route::get('/about', function () {
     return view('about', [
         "title" => "About",
-        "name" => "Raditya Agung",
-        "email" => "radityaappj23@gmail.com",
-        "image" => "radit.jpg"
+        "name" => "Hochimachi Suisei",
+        "email" => "sui@gmail.com",
+        "image" => "sui.jpeg"
+
     ]);
 });
-
-
-Route::get('/blog', [PostController::class, 'index']); 
-Route::get('posts/{slug}', [PostController::class, 'show']);
+route::get('/blog', function () {
+    return view('posts');
+});
